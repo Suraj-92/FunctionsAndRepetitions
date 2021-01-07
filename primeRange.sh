@@ -1,20 +1,20 @@
-#!/bin/bash -x
+#!/bin/bash 
 
-for (( n=1; n<=50; n++ ))
+for (( n=2; n<=100; n++ ))
 do
 	flag=0
 
 for (( i=2; i<=n/2; i++ ))
 do
 	r=$(($n%$i))
-	if [ $n -eq 0 ]
+	if [ $r -eq 0 ]
 	then
-		echo "Not prime"
+		flag=1
 	break
 	fi
 done
 if [ $flag -eq 0 ]
 then
-	echo $r "Prime"
+	echo $n 
 fi
 done
